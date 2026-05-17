@@ -13,7 +13,14 @@ footer {
 }
 
 
+header p {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+
 h1,
+p,
 footer {
     margin: 0;
     padding: 1rem;
