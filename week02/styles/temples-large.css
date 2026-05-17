@@ -1,0 +1,33 @@
+@media (min-width: 992px) and (max-width : 2560px) {
+    #menu {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav {
+        background-color: blueviolet;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+}
