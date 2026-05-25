@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Intel One Mono", monospace;
+}
+
+main {
+    background-color: cornflowerblue;
+}
+
+:root {
+    --bord: 1px solid #e1e1e1;
+}
+
+#hero-img img {
+    width: 100%;
+    height: auto;
+}
+
+header,
+footer {
+    background-color: blue;
+    color: azure;
+    text-align: center;
+    padding: 2rem;
+}
+
+.card-data,
+.card-weather {
+    text-align: center;
+    padding: 1rem;
+    border-top: var(--bord);
+    background-color: azure;
+
+}
+
+p {
+    padding: 1rem;
+}

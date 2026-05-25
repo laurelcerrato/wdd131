@@ -1,0 +1,68 @@
+@media screen and (min-width: 1024px) {
+    :root {
+        --margin-for-cards: 20%;
+
+
+    }
+
+    #hero {
+        position: relative;
+    }
+
+    .card-data {
+
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    .card-weather {
+        padding-top: 60px;
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+
+
+
+
+
+    }
+
+    h2 {
+        background-color: cadetblue;
+        position: absolute;
+        right: 10%;
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+
+    }
+
+    .card-data p:nth-child(2) {
+        margin-top: var(--margin-for-cards);
+    }
+
+    .card-weather p:nth-child(3) {
+        margin-top: var(--margin-for-cards);
+    }
+
+
+
+
+
+
+    #weather-icon {
+        display: none;
+    }
+
+    /* add emoji */
+    .weather-heading::after {
+        content: "⛅";
+
+        font-size: 1.4rem;
+    }
+
+
+
+
+}
