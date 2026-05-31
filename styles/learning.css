@@ -1,0 +1,12 @@
+:root {
+     --borders: 1px solid#777;
+     --zebra: #bbb;
+}
+
+table {
+     border: var(--borders);
+}
+
+tr:nth-child(even) {
+     background-color: var(--zebra);
+}
