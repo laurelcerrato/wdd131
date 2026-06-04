@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #FFECD1;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+h2,
+h1,
+h3 {
+    font-family: 'Intel One Mono', monospace;
+}
+
+h1 {
+    font-size: 2.5em;
+    padding: 20px;
+    margin: 0;
+}
+
+div {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+}
+
+ul {
+    list-style-position: inside;
+    padding: 0;
+    text-align: center;
+}
+
+main {
+
+    background-color: #0d1317;
+
+}
+
+header {
+    background-color: #0d1317;
+}
+
+
+section {
+    background-color: #89d2dc;
+    border-radius: 10px;
+    color: #001524;
+    margin: 20px auto;
+    padding: 20px;
+}
+p
+, h3{
+padding: 10px;
+}
+
+
+hr {
+    border: 10px solid #001524;
+}
+
+
+
+.colors,
+.typography {
+    padding: 20px;
+}
+
+.colors {
+    width: 50%;
+    min-width: 300px;
+    margin: 10px auto;
+    text-align: center;
+
+}
+
+.colors th {
+    background-color: #999;
+    padding: 5px;
+
+}
+
+.colors td {
+    width: 25%;
+    height: 3em;
+    border: 1px solid #001524;
+}
+
+.color1 {
+    background-color: #89d2dc;
+    color: #001524;
+
+}
+
+.color2 {
+    background-color: #232ed1;
+    color: #FFECD1;
+}
+
+.color3 {
+    background-color: #101d42;
+    color: #FFECD1;
+}
+
+img {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    margin: 20px auto;
+}
