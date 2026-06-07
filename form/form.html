@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WDD 131 form assignment, this assignment will help me practive creating responsive forms using html and css.">
+    <meta name="author" content="Laurel Cerrato">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-large.css">
+    <script src="scripts/form.js" defer></script>
+    <title>Form assignment -WDD 131</title>
+</head>
+
+<body>
+    <main>
+        <h1>Product Review</h1>
+        <form method="get" action="review.html" class="review-form">
+            
+
+            
+                 <div>Product Name</div>
+            <select id="product-name" name="product-name" required>
+                <option value="" disabled selected>Choose a product...</option>
+            </select>
+    
+           <fieldset id="rating">
+            <legend>Overall Rating</legend>
+                <label for="rating1"><input type="radio" id="rating1" name="rating" value="1" required>★</label>
+                <label for="rating2"><input type="radio" id="rating2" name="rating" value="2">★★</label>
+                <label for="rating3"><input type="radio" id="rating3" name="rating" value="3">★★★</label>
+                <label for="rating4"><input type="radio" id="rating4" name="rating" value="4">★★★★</label>
+                <label for="rating5"><input type="radio" id="rating5" name="rating" value="5">★★★★★</label>
+            </fieldset>    
+                
+            
+        
+                <label for="date">Date of installation</label>
+                <input type="date" id="date" name="date" required>
+           
+
+           <fieldset id="features">
+            <legend>Product Features</legend>
+                <label>Which features did you find useful in the product?
+                   <small>(Check all that apply)</small></label>
+                
+                <label for="durability"><input type="checkbox" id="durability" name="features" value="durability">Durability</label>
+                
+                <label for="ease-of-use"><input type="checkbox" id="ease-of-use" name="features" value="ease-of-use">Ease of Use</label>
+                
+                <label for="performance"><input type="checkbox" id="performance" name="features" value="performance">Performance</label>
+                
+                <label for="design"><input type="checkbox" id="design" name="features" value="design">Design</label>
+                
+           </fieldset>
+
+    <div>Written Review <small>(Optional)</small></div>
+            <textarea id="review" name="review" rows="4" cols="50"></textarea>
+
+           
+                <label for="username">Username <small>(Optional)</small></label>
+                <input type="text" id="username" name="username" maxlength="50">
+            
+                <div class="buttom"><input type="submit" value="Post Review"></div>
+            
+
+            
+        </form>
+    </main>
+
+
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> Laurel Xiomara Cerrato Ramírez, Honduras, San Pedro Sula</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #c6afcd;
+    border-radius: 10px;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1,
+footer {
+    background-color: #1c0024;
+    color: #f5ecec;
+    align-self: center;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+input, textarea {
+    width: 50%;
+    padding: 1rem;
+
+}
+
+.review-form div{
+    font-size: .9rem;
+    padding: 1rem;
+}
+
+.review-form fieldset {
+    border: none;
+    margin: 2rem 0;
+    padding: .5rem 2%;
+    border-radius: 5px;
+}
+
+.review-form legend {
+    margin-bottom: .5rem;
+    color: #020202;
+    font-size: .9rem;
+    
+}
+
+
+
+.review-form label {
+    display: block;
+    padding: 1rem;
+    color: #020202;
+    font-size: .9rem;
+
+
+    border-radius: 5px;
+}
+
+#rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+
+}
+.buttom {
+    display: flex;
+    justify-content:center;
+    padding: 1rem;
+}
