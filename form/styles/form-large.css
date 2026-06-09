@@ -1,0 +1,9 @@
+@media screen and (min-width: 500px) {
+
+    .review-form input[type="text"],
+    .review-form textarea,
+    .review-form input[type="date"],
+    select {
+        width: 50%;
+    }
+}

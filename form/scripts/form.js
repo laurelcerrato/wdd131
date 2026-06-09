@@ -1,6 +1,8 @@
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 document.getElementById("lastModified").innerHTML = document.lastModified;
 
+
+
 const products = [
     {
         id: "fc-1888",
@@ -28,3 +30,17 @@ const products = [
         averagerating: 5.0
     }
 ];
+
+
+let select = document.getElementById("product-name");
+
+products.forEach(product => {
+    const option = document.createElement('option');
+    option.value = product.id;
+    option.textContent = product.name;
+    select.append(option);
+})
+
+
+
+
