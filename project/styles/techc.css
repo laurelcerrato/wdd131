@@ -3,6 +3,7 @@ body {
     font-family: 'Raleway', sans-serif;
     color: #FFECD1;
     padding: 0;
+    text-align: center;
 }
 
 h2,
@@ -32,11 +33,12 @@ nav a {
 nav ul {
     background-color: #001524;
     position: absolute;
-    left:0;
+    left: 0;
     top: 6.5rem;
-    width: 100%;   
+    width: 100%;
 }
-nav ul li{
+
+nav ul li {
     text-align: center;
 }
 
@@ -86,13 +88,7 @@ main {
 
 }
 
-section {
-    background-color: #89d2dc;
-    border-radius: 10px;
-    color: #001524;
-    margin: 20px auto;
-    padding: 20px;
-}
+
 
 a,
 li {
@@ -103,4 +99,39 @@ li {
 
 a:hover {
     text-decoration: underline;
+}
+
+#hero-img img {
+    width: 100%;
+    height: auto;
+}
+#welcome-msg{
+    
+     background-color: #89d2dc;
+     color: #001524;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+        
+}
+#devices section{
+    background-color:#89d2dc;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    color: #001524;
+}
+#devices section>*{
+    padding: 0.5rem;
+}
+button{
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+    margin: 1rem;
+}
+footer>*{
+    margin: 0;
+    padding: 10px;
 }
