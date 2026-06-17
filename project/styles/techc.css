@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    color: #FFECD1;
+    padding: 0;
+}
+
+h2,
+h1,
+h3 {
+    font-family: 'Intel One Mono', monospace;
+}
+
+header {
+    display: flex;
+}
+
+nav {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+
+nav a {
+    padding: 2rem;
+    font-weight: 700;
+    display: none;
+
+}
+
+nav ul {
+    background-color: #001524;
+    position: absolute;
+    left:0;
+    top: 6.5rem;
+    width: 100%;   
+}
+nav ul li{
+    text-align: center;
+}
+
+
+.open a {
+    display: block;
+    margin-left: 0;
+}
+
+#menu {
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    border: 0;
+    background: none;
+    color: antiquewhite;
+}
+
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❌";
+}
+
+#logo-container {
+    padding: 1rem;
+}
+
+#logo-container img {
+    width: 150px;
+    border-radius: 35%;
+}
+
+
+header,
+footer {
+    background-color: #001524;
+}
+
+main {
+
+    background-color: #0d1317;
+
+}
+
+section {
+    background-color: #89d2dc;
+    border-radius: 10px;
+    color: #001524;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+    color: #FFECD1;
+}
+
+a:hover {
+    text-decoration: underline;
+}
