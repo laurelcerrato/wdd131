@@ -107,7 +107,7 @@ a:hover {
 }
 #welcome-msg{
     
-     background-color: #89d2dc;
+     background-color: hsl(187, 54%, 70%);
      color: #001524;
     margin: 20px auto;
     padding: 20px;

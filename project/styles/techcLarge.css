@@ -2,27 +2,52 @@
     #menu {
         display: none;
     }
-    nav{
+
+    nav {
         flex-direction: row;
         margin-left: auto;
         align-items: center;
-        
-       
+
+
     }
-     nav ul {
+
+    nav ul {
         display: flex;
         position: static;
-         }
-    
-        nav a {
-            display: block;
-            flex-direction: row;
-        }
-        
-              
-             
-        
-              
-        
-                
+    }
+
+    nav a {
+        display: block;
+        flex-direction: row;
+    }
+
+    #hero {
+        position: relative;
+    }
+
+    #welcome-msg {
+        position: absolute;
+        top: 0;
+        background-color: rgb(0 0 0 / 0.65);
+        color: antiquewhite;
+
+    }
+
+    #devices {
+        display: flex;
+        flex-direction: row;
+        background-color: #89d2dc;
+    }
+    #devices section{
+     
+        width: 100%;
+
+    }
+
+
+
+
+
+
+
 }
