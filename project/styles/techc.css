@@ -10,6 +10,8 @@ h2,
 h1,
 h3 {
     font-family: 'Intel One Mono', monospace;
+    margin: 0;
+    padding: 1rem;
 }
 
 header {
@@ -21,7 +23,7 @@ nav {
     display: flex;
     padding: 1rem;
     flex-direction: column;
-       
+
 }
 
 
@@ -88,6 +90,7 @@ footer {
 main {
 
     background-color: #0d1317;
+    margin: 0;
 
 }
 
@@ -142,4 +145,30 @@ button {
 footer>* {
     margin: 0;
     padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #232ed1;
+    padding: 2rem;
+}
+
+form fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 1rem;
+}
+legend{
+    font-weight: 700;
+}
+
+label{
+    text-align: left;
+    padding: 1rem;
+}
+#main-form{
+    padding: 2rem;
 }
