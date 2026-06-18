@@ -134,3 +134,81 @@ const earphones = [
         buyLink: "https://www.jbl.com/peak-3"
     }
 ];
+const products = [
+    ...smartphones,
+    ...laptops,
+    ...desktops,
+    ...earphones
+];
+if (document.getElementById("device-type")) {
+
+    let select = document.getElementById("device-type"); 
+
+    const unduplicatecategory = [...new Set(products.map(p => p.category))];
+
+    unduplicatecategory.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        select.append(option);
+    });
+}
+
+
+const selectedCategory = document.getElementById("device-type");
+const categoryValue = selectedCategory.value;
+const selectedStorage = document.querySelector('input[name="storage"]:checked');
+const storageValue = selectedStorage.value;
+const selectedPrice = document.querySelector('input[name="priceRange"]:checked');
+const PriceValue = selectedPrice.value;
+
+const selectedValues = document.getElementById("selected");
+const selectednew = document.createElement("p");
+selectedValues.textContent = `Storage: ${storageValue}`;
+selectedValues.appendChild(selectednew);
+
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stops the page from changing/reloading
+
+    // 1. Automatically collect all form values
+    const formData = new FormData(this);
+
+    // 2. Extract the values using the field 'name' attributes
+    const device = formData.get("device type"); // Gets selected option
+    const storage = formData.get("storage");    // Gets checked radio value (1, 2, 3, or 4)
+    const price = formData.get("priceRange");   // Gets checked price value
+
+    // 3. See your results in the browser console
+    console.log("Device:", device);
+    console.log("Storage ID:", storage);
+    console.log("Price Range:", price);
+});
+
+const selectedCategory = document.getElementById("device-type");
+const categoryValue = selectedCategory.value;
+const selectedStorage = document.querySelector('input[name="storage"]:checked');
+const storageValue = selectedStorage.value;
+const selectedPrice = document.querySelector('input[name="priceRange"]:checked');
+const PriceValue = selectedPrice.value;
+
+const selectedValues = document.getElementById("selected");
+const selectednew = document.createElement("p");
+selectedValues.textContent = `Storage: ${storageValue}`;
+selectedValues.appendChild(selectednew);
+
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stops the page from changing/reloading
+
+    // 1. Automatically collect all form values
+    const formData = new FormData(this);
+
+    // 2. Extract the values using the field 'name' attributes
+    const device = formData.get("device type"); // Gets selected option
+    const storage = formData.get("storage");    // Gets checked radio value (1, 2, 3, or 4)
+    const price = formData.get("priceRange");   // Gets checked price value
+
+    // 3. See your results in the browser console
+    console.log("Device:", device);
+    console.log("Storage ID:", storage);
+    console.log("Price Range:", price);
+});
