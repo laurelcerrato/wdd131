@@ -155,60 +155,112 @@ if (document.getElementById("device-type")) {
 }
 
 
-const selectedCategory = document.getElementById("device-type");
-const categoryValue = selectedCategory.value;
-const selectedStorage = document.querySelector('input[name="storage"]:checked');
-const storageValue = selectedStorage.value;
-const selectedPrice = document.querySelector('input[name="priceRange"]:checked');
-const PriceValue = selectedPrice.value;
+const form = document.querySelector("form");
 
-const selectedValues = document.getElementById("selected");
-const selectednew = document.createElement("p");
-selectedValues.textContent = `Storage: ${storageValue}`;
-selectedValues.appendChild(selectednew);
+if (form) {
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Stops the page from changing/reloading
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    // 1. Automatically collect all form values
-    const formData = new FormData(this);
+        const deviceType = document.getElementById("device-type").value;
 
-    // 2. Extract the values using the field 'name' attributes
-    const device = formData.get("device type"); // Gets selected option
-    const storage = formData.get("storage");    // Gets checked radio value (1, 2, 3, or 4)
-    const price = formData.get("priceRange");   // Gets checked price value
+        const storage = document.querySelector('input[name="storage"]:checked').value;
 
-    // 3. See your results in the browser console
-    console.log("Device:", device);
-    console.log("Storage ID:", storage);
-    console.log("Price Range:", price);
-});
+        const priceRange = document.querySelector('input[name="priceRange"]:checked').value;
 
-const selectedCategory = document.getElementById("device-type");
-const categoryValue = selectedCategory.value;
-const selectedStorage = document.querySelector('input[name="storage"]:checked');
-const storageValue = selectedStorage.value;
-const selectedPrice = document.querySelector('input[name="priceRange"]:checked');
-const PriceValue = selectedPrice.value;
+        console.log("Device Type:", deviceType);
+        console.log("Storage:", storage);
+        console.log("Price Range:", priceRange);
 
-const selectedValues = document.getElementById("selected");
-const selectednew = document.createElement("p");
-selectedValues.textContent = `Storage: ${storageValue}`;
-selectedValues.appendChild(selectednew);
+        const userChoices = {
+            deviceType,
+            storage,
+            priceRange
+        };
+        localStorage.setItem("techChoices", JSON.stringify(userChoices));
+        window.location.href = "result.html";
+    });
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Stops the page from changing/reloading
+}
 
-    // 1. Automatically collect all form values
-    const formData = new FormData(this);
+const results = document.getElementById("selected");
+const userChoices = JSON.parse(localStorage.getItem("techChoices"));
+if (results && userChoices) {
 
-    // 2. Extract the values using the field 'name' attributes
-    const device = formData.get("device type"); // Gets selected option
-    const storage = formData.get("storage");    // Gets checked radio value (1, 2, 3, or 4)
-    const price = formData.get("priceRange");   // Gets checked price value
+    const info = document.createElement("p");
 
-    // 3. See your results in the browser console
-    console.log("Device:", device);
-    console.log("Storage ID:", storage);
-    console.log("Price Range:", price);
-});
+    info.innerHTML = `
+Device Type: ${userChoices.deviceType} <br>
+Storage: ${userChoices.storage} <br>
+Price Range: ${userChoices.priceRange}
+`;
+
+    results.appendChild(info);
+}
+
+
+
+function filterProducts(products, choices) {
+    return products.filter(product => {
+        const matchCategory =
+            product.category.toLowerCase().trim() === choices.deviceType.toLowerCase().trim();
+
+        let matchPrice = true;
+
+        if (choices.priceRange === "budget") {
+            matchPrice = product.price <= 300;
+        } else if (choices.priceRange === "mid") {
+            matchPrice = product.price > 300 && product.price <= 800;
+        } else if (choices.priceRange === "premium") {
+            matchPrice = product.price > 800 && product.price <= 1500;
+        } else if (choices.priceRange === "high") {
+            matchPrice = product.price > 1500;
+        }
+
+        return matchCategory && matchPrice;
+    });
+}
+
+function ProductCards(list) {
+    results.innerHTML = "";
+
+    list.forEach(product => {
+        const card = document.createElement("section");
+
+        const name = document.createElement("h2");
+        name.textContent = product.productName;
+
+        const price = document.createElement("p");
+        price.innerHTML = `<span class="label">Price:</span> $${product.price}`;
+
+        const durability = document.createElement("p");
+        durability.innerHTML = `<span class="label">Durability:</span> ${product.durability}`;
+
+        const bestFor = document.createElement("p");
+        bestFor.innerHTML = `<span class="label">Best For:</span> ${product.bestFor}`;
+
+        const image = document.createElement("img");
+        image.src = product.imageUrl;
+        image.alt = product.productName;
+        image.loading = "lazy";
+        image.width = 300;
+
+        const link = document.createElement("a");
+        link.href = product.buyLink;
+        link.textContent = "Buy Now";
+        link.target = "_blank";
+
+        card.append(name, price, durability, bestFor, image, link);
+        results.appendChild(card);
+    });
+}
+
+if (results && userChoices) {
+    const filtered = filterProducts(products, userChoices);
+
+    if (filtered.length === 0) {
+        results.innerHTML = "<p>No matching products found.</p>";
+    } else {
+        ProductCards(filtered);
+    }
+}

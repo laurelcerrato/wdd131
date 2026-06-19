@@ -177,4 +177,17 @@ label {
 #main-form {
     padding: 2rem;
 }
+#selected{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #232ed1;
+    border-radius: 10px;
+}
+
+
 
