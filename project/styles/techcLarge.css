@@ -26,7 +26,7 @@
     }
 
     #welcome-msg {
-        position:absolute;
+        position: absolute;
         top: 0;
         background-color: rgb(0 0 0 / 0.65);
         color: antiquewhite;
@@ -40,29 +40,29 @@
 
     #devices section {
         border-radius: 0px;
-        background-color: none;
-
         width: 100%;
 
     }
-    #main-form{
+
+    #main-form {
         width: 40%;
         margin-left: auto;
         margin-right: auto;
     }
-    #device-type{
+
+    #device-type {
         width: 50%;
     }
 
 
-    #selected{
+    #selected {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        
-        
-    } 
 
-    #selected section{
+
+    }
+
+    #selected section {
         margin: 10% 10% 10% 10%;
     }
 
