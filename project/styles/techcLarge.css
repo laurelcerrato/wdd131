@@ -55,6 +55,20 @@
     }
 
 
+    #selected{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        
+    } 
+
+    #selected section{
+        margin: 10% 10% 10% 10%;
+    }
+
+
+
+
 
 
 

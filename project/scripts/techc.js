@@ -169,7 +169,7 @@ if (form) {
         const priceRange = document.querySelector('input[name="priceRange"]:checked').value;
 
         console.log("Device Type:", deviceType);
-        console.log("Storage:", storage);
+        console.log("Storage in GB: ", storage);
         console.log("Price Range:", priceRange);
 
         const userChoices = {
@@ -184,18 +184,22 @@ if (form) {
 }
 
 const results = document.getElementById("selected");
+const choices = document.getElementById("container");
 const userChoices = JSON.parse(localStorage.getItem("techChoices"));
-if (results && userChoices) {
+if (choices && userChoices) {
 
     const info = document.createElement("p");
 
     info.innerHTML = `
-Device Type: ${userChoices.deviceType} <br>
-Storage: ${userChoices.storage} <br>
+Device Type: ${userChoices.deviceType}<br>
+<br>
+Storage: ${userChoices.storage}<br>
+<br>
+
 Price Range: ${userChoices.priceRange}
 `;
 
-    results.appendChild(info);
+    choices.appendChild(info);
 }
 
 
@@ -229,6 +233,11 @@ function ProductCards(list) {
 
         const name = document.createElement("h2");
         name.textContent = product.productName;
+        const image = document.createElement("img");
+        image.src = product.imageUrl;
+        image.alt = product.productName;
+        image.loading = "lazy";
+        image.width = 300;
 
         const price = document.createElement("p");
         price.innerHTML = `<span class="label">Price:</span> $${product.price}`;
@@ -239,18 +248,14 @@ function ProductCards(list) {
         const bestFor = document.createElement("p");
         bestFor.innerHTML = `<span class="label">Best For:</span> ${product.bestFor}`;
 
-        const image = document.createElement("img");
-        image.src = product.imageUrl;
-        image.alt = product.productName;
-        image.loading = "lazy";
-        image.width = 300;
+        
 
         const link = document.createElement("a");
         link.href = product.buyLink;
         link.textContent = "Buy Now";
         link.target = "_blank";
 
-        card.append(name, price, durability, bestFor, image, link);
+        card.append(name, price, durability, bestFor, link);
         results.appendChild(card);
     });
 }

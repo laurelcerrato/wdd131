@@ -132,6 +132,7 @@ function TempleCards(filteredTemples) {
         let dedication = document.createElement("p");
         let size = document.createElement("p");
         let image = document.createElement("img");
+     
 
         name.innerHTML = temple.templeName;
         location.innerHTML = `<span class ="label">Location: </span> ${temple.location} `;
